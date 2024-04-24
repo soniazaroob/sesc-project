@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <title>Log In</title>
+    <meta th:replace="fragments/header" />
+
+  </head>
+  <body class="bg-light">
+    <div class="bg-light">
+      <div id="container" class="container ">
+        <form class="form-signin" th:action="@{/login}" method="post">
+          <h2 class="form-signin-heading text-center text-dark">Welcome To Student App</h2>
+          <div th:if="${param.error}" class="alert alert-danger">
+            Invalid credentials.
+          </div>
+          <div th:if="${param.logout}" class="alert alert-success">
+            You have been logged out.
+          </div>
+          <p class="small-gap">
+            <label for="username" class="sr-only">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="userName"
+              class="form-control"
+              placeholder="Username"
+              required
+              autofocus
+            />
+          </p>
+          <p class="small-gap">
+            <label for="password" class="sr-only">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+          </p>
+          <input
+            name="_csrf"
+            type="hidden"
+            value="7607f1cc-aeb7-4061-b49f-43bc44e4784e"
+          />
+          <div class="d-flex justify-content-center small-gap">
+            <button class="btn btn-danger" type="submit">Sign in</button>
+          </div>
+          <div>
+            <h1></h1>
+          </div>
+          <div class="text-center font-weight-bold">
+            <a href="/register">Click here to make a new account.</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

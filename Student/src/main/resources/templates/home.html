@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="en">
+<head>
+    <title>Student Portal Home Page</title>
+    <meta th:replace="fragments/header"/>
+
+</head>
+<body class="bg-light">
+<div th:replace="fragments/nav"></div>
+<div>
+    <div id="container" class="container">
+        <h2 class="text-center " th:inline="text">Welcome, [[${showFirstName ? student.forename : user.userName}]]!</h2>
+        <p class="text-center ">This is the student app.</p>
+        <p class="text-center ">You can access your profile, courses and your graduation details here.</p>
+    </div>
+</div>
+
+</body>
+</html>
